@@ -16,5 +16,6 @@ All users could be able to search for any game they want to know about and find 
 - List of all games page
 - List of all game studios page
 - Page for video game
+
 **Maybe some new pages will be added later**
 
