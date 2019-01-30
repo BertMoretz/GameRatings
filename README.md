@@ -1,6 +1,6 @@
-# GameRatings
+# GameCritic
 
-GameRatings is positioned as a review aggregator web-application about videogames. It will include latest news and all relevant information about video games.
+GameCritic is positioned as a review aggregator web-application about videogames. It will include latest news and all relevant information about video games.
 
 ## API
 
