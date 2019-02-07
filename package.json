@@ -1,0 +1,28 @@
+{
+  "name": "gamecritic",
+  "version": "1.0.0",
+  "description": "Review Aggregator",
+  "main": "./assets/js/index.js",
+  "scripts": {
+    "webpack": "webpack --progress",
+    "start:dev": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BertMoretz/GameRatings.git"
+  },
+  "author": "Albert Sakhapov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BertMoretz/GameRatings/issues"
+  },
+  "homepage": "https://github.com/BertMoretz/GameRatings#readme",
+  "dependencies": {
+    "webpack": "^4.29.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
