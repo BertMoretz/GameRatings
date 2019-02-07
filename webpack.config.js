@@ -2,7 +2,7 @@
 var path = require('path');
 
 module.exports = {
-  mode: 'development',
+  //mode: 'development',
   entry: './assets/js/index.js',
   output: {
     filename: 'bundle.js',
@@ -12,5 +12,16 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      }
+    ]
   }
 };
