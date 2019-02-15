@@ -2,7 +2,7 @@
   "name": "gamecritic",
   "version": "1.0.0",
   "description": "Games Review Aggregator",
-  "main": "./assets/js/index.js",
+  "main": "./src/js/index.js",
   "scripts": {
     "webpack": "webpack --progress",
     "build": "webpack --mode production",
