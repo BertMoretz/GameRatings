@@ -20,7 +20,7 @@ export class MySecondComponent extends React.Component {
     componentDidMount() {
         //axios.defaults.headers.common['Authorization'] = '861c079a35348acf2360c08a2efc2e90';
         axios
-            .get('https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games/?fields=name,cover.*,genres.*,platforms, summary&limit=15&&expand=cover,genres&order=popularity:desc', {headers: {
+            .get('https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games/?fields=name,cover.*,genres.*,platforms,summary,aggregated_rating&limit=15&&expand=cover,genres&order=popularity:desc', {headers: {
               "user-key": "861c079a35348acf2360c08a2efc2e90"
             }})
             .then(response => {

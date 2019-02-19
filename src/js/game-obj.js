@@ -24,8 +24,10 @@ export const CharacterCard = ({ character }) => (
             title={character.name}
             subtitle={<span> {character.genres[0].name}</span>}
             actionIcon={
-              <IconButton className={style.icon}>
-                Hey
+              <IconButton >
+                <div className={style.score}>
+                { ('aggregated_rating' in character)? parseInt(character.aggregated_rating )+"%" : "tbd" }
+                </div>
               </IconButton>
             }
           />
