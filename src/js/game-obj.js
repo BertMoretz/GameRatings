@@ -1,35 +1,34 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import axios from 'axios'
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
+import IconButton from '@material-ui/core/IconButton';
+import Link from '@material-ui/core/Link';
+
 
 import style from '../styles.css'
 
 export const CharacterCard = ({ character }) => (
-    <Grid item sm={6} md={4} lg={3}>
-        <Card className={style.card}>
-            <CardMedia
-                className={style.media}
-                image={character.image}
-                title="Avatar"
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    {character.name}
-                </Typography>
-                <Typography>
-                  //  Origin: {character.origin.name}
-                </Typography>
-            </CardContent>
-            <CardActions  className={style.bg}>
-                <Button size="small" color="primary">
-                    <span className={'class-name'}>Details</span>
-                </Button>
-            </CardActions>
-        </Card>
-    </Grid>
+      <GridListTile key={character.name} className={style.elem}>
+          <a href="#" className={style.coverlink}>
+            <div className={style.detailscover}>
+                Details
+            </div>
+
+            <img src={"https://images.igdb.com/igdb/image/upload/t_cover_big/" + character.cover.image_id + ".jpg"} alt={character.name} className={style.elem} />
+          </a>
+
+          <GridListTileBar
+            title={character.name}
+            subtitle={<span> {character.genres[0].name}</span>}
+            actionIcon={
+              <IconButton className={style.icon}>
+                Hey
+              </IconButton>
+            }
+          />
+      </GridListTile>
+
 )
