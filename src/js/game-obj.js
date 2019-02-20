@@ -18,9 +18,10 @@ export const CharacterCard = ({ character }) => (
             </div>
 
             <img src={"https://images.igdb.com/igdb/image/upload/t_cover_big/" + character.cover.image_id + ".jpg"} alt={character.name} className={style.elem} />
-          </a>
+
 
           <GridListTileBar
+            className={style.caption}
             title={character.name}
             subtitle={<span> {character.genres[0].name}</span>}
             actionIcon={
@@ -31,6 +32,7 @@ export const CharacterCard = ({ character }) => (
               </IconButton>
             }
           />
+         </a>
       </GridListTile>
 
 )

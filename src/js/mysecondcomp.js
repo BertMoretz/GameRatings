@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 
 import { CharacterCard } from "./game-obj"
 import style from '../styles.css'
+import logo from '../imgs/logo.png'
 
 export class MySecondComponent extends React.Component {
 
@@ -41,9 +42,9 @@ export class MySecondComponent extends React.Component {
           <div  className={style.cards} >
           <AppBar position="static" color="default">
             <Toolbar>
-              <Typography variant="h6" className={style.grow}>
-                GameCritic
-              </Typography>
+              <div className={style.grow}>
+                <img src={logo} class={style.logo}/>
+              </div>
               <div className={style.search}>
                 <InputBase
                   placeholder="Search…"
