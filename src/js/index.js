@@ -2,15 +2,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const MyFirstComponent = ({color}) =>
-  <div>
-    <span style={{color}}>
-      Hey, I am {color}
-    </span>
-  </div>
 
-//Простой react код. Hello World
+import { HomePage } from "./home-page"
+
 ReactDOM.render(
-  <MyFirstComponent color="red"/>,
-  document.getElementById('root')
+    <HomePage />,
+    document.getElementById('root')
 );
