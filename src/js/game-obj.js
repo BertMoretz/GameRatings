@@ -10,7 +10,7 @@ import Link from '@material-ui/core/Link';
 
 import style from '../styles.css'
 
-export const CharacterCard = ({ character }) => (
+export const GameObj = ({ character }) => (
       <GridListTile key={character.name} className={style.elem}>
           <a href="#" className={style.coverlink}>
             <div className={style.detailscover}>
