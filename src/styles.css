@@ -2,6 +2,15 @@
   margin-top: 24px;
 }
 
+.detailcard {
+  margin-top: 24px;
+}
+
+.detailedcover {
+  height: 440px;
+  filter: brightness(40%);
+}
+
 .media {
   height: 250px;
 }
@@ -84,6 +93,7 @@ a.coverlink:hover .caption{
 
 .loading {
   text-align: center;
+  margin-top: 24px;
 }
 
 .logo {

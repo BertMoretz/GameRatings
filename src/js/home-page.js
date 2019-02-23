@@ -4,11 +4,6 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import Button from '@material-ui/core/Button';
 
 import { GameObj } from "./game-obj"
 import style from '../styles.css'
@@ -25,13 +20,17 @@ export class HomePage extends React.Component {
               "user-key": "861c079a35348acf2360c08a2efc2e90"
             }})
             .then(response => {
-                 console.log('Axios returned', response.data)
+                console.log('Axios returned', response.data)
                 this.setState( {
                   games: response.data
                 })
           });
 
-      }
+    }
+
+    buildDetailsClickHandler = (game) => () => {
+       this.props.history.push(`/game/${game.id}`)
+     }
 
     render() {
         if(!this.state.games) {
@@ -40,36 +39,21 @@ export class HomePage extends React.Component {
 
         return (
           <div  className={style.cards} >
-          <AppBar position="static" color="default">
-            <Toolbar>
-              <div className={style.grow}>
-                <img src={logo} class={style.logo}/>
-              </div>
-              <div className={style.search}>
-                <InputBase
-                  placeholder="Search…"
-                  classes={{
-                    root: style.inputRoot,
-                    input: style.inputInput,
-                  }}
-                />
-              </div>
-              <Button color="inherit">Home</Button>
-              <Button color="inherit">All Games</Button>
-              <Button color="inherit">Companies</Button>
-            </Toolbar>
-          </AppBar>
 
-          <GridList cellHeight={180} className={style.gridList} cellSpacing>
-            <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-              <ListSubheader component="div">Popular Now</ListSubheader>
-            </GridListTile>
+            <GridList cellHeight={180} className={style.gridList} cellSpacing>
+              <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
+                <ListSubheader component="div">Popular Now</ListSubheader>
+              </GridListTile>
 
-            {this.state.games.map(game =>
-              <GameObj key={game.name} character={game}/>
-            )}
-          </GridList>
-        </div>
+              {this.state.games.map(game =>
+                <GameObj
+                  key={game.name}
+                  character={game}
+                  handleDetailsClick={this.buildDetailsClickHandler(game)}
+                  />
+              )}
+            </GridList>
+          </div>
         )
     }
 }

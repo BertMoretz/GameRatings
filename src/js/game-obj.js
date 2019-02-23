@@ -10,9 +10,9 @@ import Link from '@material-ui/core/Link';
 
 import style from '../styles.css'
 
-export const GameObj = ({ character }) => (
+export const GameObj = ({ character, handleDetailsClick }) => (
       <GridListTile key={character.name} className={style.elem}>
-          <a href="#" className={style.coverlink}>
+          <a href="#" className={style.coverlink} onClick={handleDetailsClick}>
             <div className={style.detailscover}>
                 Details
             </div>
