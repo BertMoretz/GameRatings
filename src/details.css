@@ -86,12 +86,13 @@
 }
 
 .gamerating {
-  /* position: absolute; */
+  position: absolute;
   color: rgb(255, 255, 255);
   font-size: 37px;
   font-family: 'Roboto';
   font-weight: bold;
-  right: 15px;
+  padding: 10px;
+  border-radius: 5px;
   /* margin-left: 340px;
   margin-top: -140px; */
 }
@@ -110,4 +111,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
   overflow: hidden;
+}
+
+.rating {
+  padding: 4px;
+  border-radius: 5px;
 }

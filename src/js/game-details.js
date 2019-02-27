@@ -45,8 +45,24 @@ export class GameDetails extends React.Component {
 
         const { game } = this.state
 
+        const ratingClass = {
+          backgroundColor: 'green',
+
+        };
+
         if(!game) {
           return <div className={styles.loading}> <CircularProgress /> </div>
+        }
+
+        if (game) {
+          if ("aggregated_rating" in game) {
+            if (game.aggregated_rating <= 70)
+            ratingClass.backgroundColor = "#ffcf48"
+            if (game.aggregated_rating < 50)
+            ratingClass.backgroundColor = "#ca3a27"
+          } else {
+            ratingClass.backgroundColor = "#383838"
+          }
         }
 
         return (
@@ -75,8 +91,8 @@ export class GameDetails extends React.Component {
                         </Grid>
                       </Grid>
 
-                      <Grid item xs={12} md={4} lg={3} alignItems="flex-end">
-                        <div className={styles.gamerating}> { ('aggregated_rating' in game)? parseInt(game.aggregated_rating )+"%" : "tbd" } </div>
+                      <Grid item xs={12} md={4} lg={3}>
+                        <div className={styles.gamerating} style={ratingClass}> { ('aggregated_rating' in game)? parseInt(game.aggregated_rating ) : "tbd" } </div>
                       </Grid>
                     </Grid>
                   </div>
