@@ -1,0 +1,383 @@
+[
+  {
+    "id": 36950,
+    "aggregated_rating": 61.0,
+    "cover": {
+      "id": 71030,
+      "alpha_channel": false,
+      "animated": false,
+      "game": 36950,
+      "height": 960,
+      "image_id": "co1it2",
+      "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1it2.jpg",
+      "width": 677
+    },
+    "genres": [
+      {
+        "id": 5,
+        "created_at": 1297555200,
+        "name": "Shooter",
+        "slug": "shooter",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/shooter"
+      },
+      {
+        "id": 12,
+        "created_at": 1297555200,
+        "name": "Role-playing (RPG)",
+        "slug": "role-playing-rpg",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/role-playing-rpg"
+      },
+      {
+        "id": 31,
+        "created_at": 1323561600,
+        "name": "Adventure",
+        "slug": "adventure",
+        "updated_at": 1323561600,
+        "url": "https://www.igdb.com/genres/adventure"
+      }
+    ],
+    "name": "Anthem",
+    "platforms": [
+      6,
+      48,
+      49
+    ],
+    "summary": "Anthem is a shared-world action RPG, where players can delve into a vast landscape teeming with amazing technology and forgotten treasures. This is a world where Freelancers are called upon to defeat savage beasts, ruthless marauders, and forces plotting to conquer humanity."
+  },
+  {
+    "id": 37016,
+    "aggregated_rating": 82.6363636363636,
+    "cover": {
+      "id": 71083,
+      "alpha_channel": false,
+      "animated": false,
+      "game": 37016,
+      "height": 2045,
+      "image_id": "co1iuj",
+      "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1iuj.jpg",
+      "width": 1534
+    },
+    "genres": [
+      {
+        "id": 5,
+        "created_at": 1297555200,
+        "name": "Shooter",
+        "slug": "shooter",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/shooter"
+      },
+      {
+        "id": 31,
+        "created_at": 1323561600,
+        "name": "Adventure",
+        "slug": "adventure",
+        "updated_at": 1323561600,
+        "url": "https://www.igdb.com/genres/adventure"
+      }
+    ],
+    "name": "Metro Exodus",
+    "platforms": [
+      6,
+      48,
+      49
+    ],
+    "summary": "Metro Exodus is an epic, story-driven first person shooter from 4A Games that blends deadly combat and stealth with exploration and survival horror in one of the most immersive game worlds ever created. Explore the Russian wilderness across vast, non-linear levels and follow a thrilling story-line that spans an entire year through spring, summer and autumn to the depths of nuclear winter. Inspired by the novels of Dmitry Glukhovsky, Metro Exodus continues Artyom’s story in the greatest Metro adventure yet"
+  },
+  {
+    "id": 76253,
+    "cover": {
+      "id": 66333,
+      "game": 76253,
+      "height": 1125,
+      "image_id": "a2ppkmdjno7ja5w24qeq",
+      "url": "//images.igdb.com/igdb/image/upload/t_thumb/a2ppkmdjno7ja5w24qeq.jpg",
+      "width": 825
+    },
+    "genres": [
+      {
+        "id": 25,
+        "created_at": 1301616000,
+        "name": "Hack and slash/Beat \u0027em up",
+        "slug": "hack-and-slash-beat-em-up",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/hack-and-slash-beat-em-up"
+      }
+    ],
+    "name": "Devil May Cry 5",
+    "platforms": [
+      6,
+      48,
+      49
+    ],
+    "summary": "A brand new entry in the legendary over-the-top action series comes to Xbox One, PlayStation 4, and PC in Spring 2019, complete with its signature blend of high-octane stylized action and otherworldly and original characters the series is known for. Director Hideaki Itsuno and the core team have reunited to create the most over the top, technically advanced, utterly insane action experience of this generation. \n \nYears have passed since the legions of hell have set foot in this world, but now a new demonic invasion has begun, and humanity’s last hope will rest in the hands of three lone demon hunters, each offering a radically different play style. United by fate and a thirst for vengeance, these demon hunters will have to face their demons if they hope to survive."
+  },
+  {
+    "id": 90099,
+    "cover": {
+      "id": 71250,
+      "alpha_channel": false,
+      "animated": false,
+      "game": 90099,
+      "height": 1800,
+      "image_id": "co1iz6",
+      "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1iz6.jpg",
+      "width": 1272
+    },
+    "genres": [
+      {
+        "id": 5,
+        "created_at": 1297555200,
+        "name": "Shooter",
+        "slug": "shooter",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/shooter"
+      },
+      {
+        "id": 12,
+        "created_at": 1297555200,
+        "name": "Role-playing (RPG)",
+        "slug": "role-playing-rpg",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/role-playing-rpg"
+      }
+    ],
+    "name": "Tom Clancy\u0027s The Division 2",
+    "platforms": [
+      6,
+      48,
+      49
+    ],
+    "summary": "The Division 2 is an action-shooter RPG set in an open-world. Play in co-op and PvP modes that offer more variety in missions and challenges, new progression systems with unique twists and surprises, and fresh gaming innovations to engage players for years to come."
+  },
+  {
+    "id": 76882,
+    "cover": {
+      "id": 71296,
+      "alpha_channel": false,
+      "animated": false,
+      "game": 76882,
+      "height": 1024,
+      "image_id": "co1j0g",
+      "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1j0g.jpg",
+      "width": 768
+    },
+    "genres": [
+      {
+        "id": 31,
+        "created_at": 1323561600,
+        "name": "Adventure",
+        "slug": "adventure",
+        "updated_at": 1323561600,
+        "url": "https://www.igdb.com/genres/adventure"
+      }
+    ],
+    "name": "Sekiro: Shadows Die Twice",
+    "platforms": [
+      6,
+      48,
+      49
+    ],
+    "summary": "\"Carve your own clever path to vengeance in an all-new adventure from developer FromSoftware. \n \nExplore late 1500s Sengoku Japan, a brutal period of constant life and death conflict, as you come face to face with larger than life foes in a dark and twisted world. Unleash an arsenal of deadly prosthetic tools and powerful ninja abilities while you blend stealth, vertical traversal, and visceral head to head combat in a bloody confrontation. \n \nTake Revenge. Restore your honor. Kill Ingeniously.\""
+  },
+  {
+    "id": 114455,
+    "cover": {
+      "id": 71287,
+      "alpha_channel": true,
+      "animated": false,
+      "game": 114455,
+      "height": 1600,
+      "image_id": "co1j07",
+      "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1j07.jpg",
+      "width": 1200
+    },
+    "genres": [
+      {
+        "id": 15,
+        "created_at": 1297555200,
+        "name": "Strategy",
+        "slug": "strategy",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/strategy"
+      },
+      {
+        "id": 31,
+        "created_at": 1323561600,
+        "name": "Adventure",
+        "slug": "adventure",
+        "updated_at": 1323561600,
+        "url": "https://www.igdb.com/genres/adventure"
+      },
+      {
+        "id": 32,
+        "created_at": 1341360000,
+        "name": "Indie",
+        "slug": "indie",
+        "updated_at": 1341360000,
+        "url": "https://www.igdb.com/genres/indie"
+      }
+    ],
+    "name": "Pacify",
+    "platforms": [
+      6,
+      14
+    ],
+    "summary": "An indie, multiplayer, horror game with fast paced game play for up to 4 players. Teams will need to explore an eerie mansion with a rumored past of funeral services including contacting deceased loved ones. A scary girl roams the house, and players need to keep her pacified to survive."
+  },
+  {
+    "id": 38967,
+    "cover": {
+      "id": 71460,
+      "alpha_channel": false,
+      "animated": false,
+      "game": 38967,
+      "height": 1851,
+      "image_id": "co1j50",
+      "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1j50.jpg",
+      "width": 1388
+    },
+    "genres": [
+      {
+        "id": 13,
+        "created_at": 1297555200,
+        "name": "Simulator",
+        "slug": "simulator",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/simulator"
+      }
+    ],
+    "name": "Cooking Simulator",
+    "platforms": [
+      6
+    ],
+    "summary": "Experience the world of restaurant cooking in a highly polished, realistic kitchen. Use ovens, gas stands, pots, pans, bowls and plates, everything you need. Prepare dozens of lifelike ingredients - from vegetables through fish to steaks and poultry - to cook over thirty real dishes, or anything you like."
+  },
+  {
+    "id": 22422,
+    "cover": {
+      "id": 16642,
+      "game": 22422,
+      "height": 477,
+      "image_id": "hq3eh6p2iwdoqft9xp56",
+      "url": "//images.igdb.com/igdb/image/upload/t_thumb/hq3eh6p2iwdoqft9xp56.jpg",
+      "width": 320
+    },
+    "genres": [
+      {
+        "id": 13,
+        "created_at": 1297555200,
+        "name": "Simulator",
+        "slug": "simulator",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/simulator"
+      },
+      {
+        "id": 31,
+        "created_at": 1323561600,
+        "name": "Adventure",
+        "slug": "adventure",
+        "updated_at": 1323561600,
+        "url": "https://www.igdb.com/genres/adventure"
+      }
+    ],
+    "name": "Sexy Beach 3",
+    "platforms": [
+      6
+    ],
+    "summary": "Sexy Beach 3 is the third game in the Sexy Beach franchise developed by Illusion Software."
+  },
+  {
+    "id": 10039,
+    "cover": {
+      "id": 10164,
+      "game": 10039,
+      "height": 1420,
+      "image_id": "zbvnvg66mwsqt52fnfyk",
+      "url": "//images.igdb.com/igdb/image/upload/t_thumb/zbvnvg66mwsqt52fnfyk.jpg",
+      "width": 960
+    },
+    "genres": [
+      {
+        "id": 4,
+        "created_at": 1297555200,
+        "name": "Fighting",
+        "slug": "fighting",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/fighting"
+      },
+      {
+        "id": 5,
+        "created_at": 1297555200,
+        "name": "Shooter",
+        "slug": "shooter",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/shooter"
+      },
+      {
+        "id": 8,
+        "created_at": 1297555200,
+        "name": "Platform",
+        "slug": "platform",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/platform"
+      },
+      {
+        "id": 32,
+        "created_at": 1341360000,
+        "name": "Indie",
+        "slug": "indie",
+        "updated_at": 1341360000,
+        "url": "https://www.igdb.com/genres/indie"
+      }
+    ],
+    "name": "Superfighters Deluxe",
+    "platforms": [
+      6
+    ],
+    "summary": "Superfighters Deluxe is a multiplayer 2D action game where little flat-headed men fight to the death in small and highly destructible arenas. Surviving each round takes skill, strategy and luck."
+  },
+  {
+    "id": 37419,
+    "cover": {
+      "id": 66684,
+      "game": 37419,
+      "height": 215,
+      "image_id": "ku5zgekunpbqavzeo4wj",
+      "url": "//images.igdb.com/igdb/image/upload/t_thumb/ku5zgekunpbqavzeo4wj.jpg",
+      "width": 460
+    },
+    "genres": [
+      {
+        "id": 13,
+        "created_at": 1297555200,
+        "name": "Simulator",
+        "slug": "simulator",
+        "updated_at": 1323216000,
+        "url": "https://www.igdb.com/genres/simulator"
+      },
+      {
+        "id": 31,
+        "created_at": 1323561600,
+        "name": "Adventure",
+        "slug": "adventure",
+        "updated_at": 1323561600,
+        "url": "https://www.igdb.com/genres/adventure"
+      },
+      {
+        "id": 32,
+        "created_at": 1341360000,
+        "name": "Indie",
+        "slug": "indie",
+        "updated_at": 1341360000,
+        "url": "https://www.igdb.com/genres/indie"
+      }
+    ],
+    "name": "Dude Simulator",
+    "platforms": [
+      6
+    ],
+    "summary": "Dude Simulator is an open world sandbox game. This is a life simulator. The main objective is to enjoy what you are doing."
+  }
+]
