@@ -5,8 +5,8 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';
 
-import style from '../styles.css'
-import logo from '../imgs/logo.png'
+import style from './styles.css'
+import logo from '../../imgs/logo.png'
 
 export class MyAppBar extends React.Component {
 
@@ -15,7 +15,7 @@ export class MyAppBar extends React.Component {
       <AppBar position="static" color="default">
         <Toolbar>
           <div className={style.grow}>
-            <img src={logo} class={style.logo}/>
+            <img src={logo} className={style.logo}/>
           </div>
           <div className={style.search}>
             <InputBase
