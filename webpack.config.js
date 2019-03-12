@@ -7,9 +7,10 @@ const buildStubServer = require('./stub/server')
 
 module.exports = {
   //mode: 'development',
-  entry: './src/js/index.js',
+  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
+    publicPath: '/',
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {

@@ -15,7 +15,7 @@ import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import styles from "../details.css"
+import styles from "./details.css"
 
 export class GameDetails extends React.Component {
 
