@@ -9,7 +9,7 @@ module.exports = (app) => {
     app.get('/games/', (request, response) => {
         if (port === '1234') {
             fs.readFile(
-                path.resolve(__dirname, 'games1.json'),
+                path.resolve(__dirname, 'games.json'),
                 { encoding: 'utf8' },
                 (err, data) => {
                     response.type('application/json').send(data)
@@ -17,7 +17,7 @@ module.exports = (app) => {
             )
         } else{
             fs.readFile(
-                path.resolve(__dirname, 'games.json'),
+                path.resolve(__dirname, 'games1.json'),
                 { encoding: 'utf8' },
                 (err, data) => {
                     response.type('application/json').send(data)
