@@ -113,7 +113,18 @@
   overflow: hidden;
 }
 
-.rating {
-  padding: 4px;
-  border-radius: 5px;
+.bad {
+  background-color: #ca3a27;
+}
+
+.okay {
+  background-color: #ffcf48;
+}
+
+.good {
+  background-color: green;
+}
+
+.tbd {
+  background-color: #383838;
 }
