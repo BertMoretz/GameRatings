@@ -6,6 +6,10 @@ const port = process.env.PORT || 9000
 
 const buildStubServer = require('./stub/server')
 
+const port = process.env.PORT || 9000
+
+const buildStubServer = require('./stub/server')
+
 module.exports = {
   //mode: 'development',
   entry: './src/index.js',
