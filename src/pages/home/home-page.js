@@ -15,7 +15,7 @@ export class HomePage extends React.Component {
     componentDidMount() {
         //axios.defaults.headers.common['Authorization'] = '861c079a35348acf2360c08a2efc2e90';
         axios
-            .get('https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games/?fields=name,cover.*,genres.*,platforms,popularity,summary,aggregated_rating&limit=10&&expand=cover,genres&order=popularity:desc', {headers: {
+            .get(BACKEND_URL + 'games/?fields=name,cover.*,genres.*,platforms,popularity,summary,aggregated_rating&limit=10&&expand=cover,genres&order=popularity:desc', {headers: {
               "user-key": "861c079a35348acf2360c08a2efc2e90"
             }})
             .then(response => {

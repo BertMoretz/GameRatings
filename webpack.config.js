@@ -1,5 +1,10 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
+const webpack = require("webpack");
+
+const port = process.env.PORT || 9000
+
+const buildStubServer = require('./stub/server')
 
 const port = process.env.PORT || 9000
 
@@ -53,6 +58,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+	            BACKEND_URL: `"${process.env.BACKEND_URL}"`
+	        }),
     new HtmlWebpackPlugin({
       template: "src/index.html"
     })

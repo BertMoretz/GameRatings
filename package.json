@@ -9,9 +9,8 @@
     "dev": "webpack --mode development",
     "start:dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node ./stub/server.js",
     "dev:stub": "cross-env PORT=1234 BACKEND_URL=/ npm run start:dev",
-    "dev:api": "cross-env PORT=1235 BACKEND_URL=https://api-v3.igdb.com/ npm run start:dev"
+    "dev:api": "cross-env PORT=1235 BACKEND_URL=https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/ npm run start:dev"
   },
   "repository": {
     "type": "git",
