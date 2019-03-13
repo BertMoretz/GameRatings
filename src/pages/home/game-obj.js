@@ -8,22 +8,22 @@ import IconButton from '@material-ui/core/IconButton';
 import Link from '@material-ui/core/Link';
 
 
-import style from '../styles.css'
+import style from './styles.css'
 
-export const GameObj = ({ character }) => (
+export const GameObj = ({ character, handleDetailsClick }) => (
       <GridListTile key={character.name} className={style.elem}>
-          <a href="#" className={style.coverlink}>
+          <a href="#" className={style.coverlink} onClick={handleDetailsClick}>
             <div className={style.detailscover}>
                 Details
             </div>
 
-            <img src={"https://images.igdb.com/igdb/image/upload/t_cover_big/" + character.cover.image_id + ".jpg"} alt={character.name} className={style.elem} />
+            <img src={character.cover? "https://images.igdb.com/igdb/image/upload/t_cover_big/" + character.cover.image_id + ".jpg" : ""} alt={character.name} className={style.elem} />
 
 
           <GridListTileBar
             className={style.caption}
             title={character.name}
-            subtitle={<span> {character.genres[0].name}</span>}
+            subtitle={<span> {character.genres? character.genres[0].name: "  "}</span>}
             actionIcon={
               <IconButton >
                 <div className={style.score}>
