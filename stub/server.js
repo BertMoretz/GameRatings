@@ -15,17 +15,7 @@ module.exports = (app) => {
                     response.type('application/json').send(data)
                 }
             )
-        } else{
-            fs.readFile(
-                path.resolve(__dirname, 'games1.json'),
-                { encoding: 'utf8' },
-                (err, data) => {
-                    response.type('application/json').send(data)
-                }
-            )
-        }
-
-
+        } 
     })
 
 }
