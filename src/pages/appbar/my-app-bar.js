@@ -4,11 +4,16 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';
+import { withRouter } from "react-router-dom"
 
 import style from './styles.css'
 import logo from '../../imgs/logo.png'
 
-export class MyAppBar extends React.Component {
+class MyAppBar extends React.Component {
+
+  buildDetailsClickHandler = (link) => () => {
+     this.props.history.replace(`/${link}`)
+   }
 
   render() {
     return (
@@ -26,11 +31,13 @@ export class MyAppBar extends React.Component {
               }}
             />
           </div>
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">All Games</Button>
+          <Button color="inherit" onClick={this.buildDetailsClickHandler("home").bind(this)}>Home</Button>
+          <Button color="inherit" onClick={this.buildDetailsClickHandler("all")}> All Games</Button>
           <Button color="inherit">Companies</Button>
         </Toolbar>
       </AppBar>
     )
   }
-}
+};
+
+export default withRouter(MyAppBar)
