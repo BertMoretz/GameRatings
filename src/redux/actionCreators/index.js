@@ -4,5 +4,5 @@ export const gamesListLoaded = (games) => ({
 })
 
 export const gamesListLoadFailed = () => ({
-    type: 'GAMES_LIST_LOAD_FAILED'
+    type: 'GAMES_LIST_LOADED_FAILED'
 })

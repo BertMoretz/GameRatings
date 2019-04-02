@@ -27,7 +27,7 @@ import { store } from '../../redux/store';
                 this.props.gamesListLoaded(response.data)
             })
             .catch((err) => {
-                //this.props.gamesListLoadFailed()
+               this.props.gamesListLoadFailed()
             });
 
     }

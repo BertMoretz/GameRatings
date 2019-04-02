@@ -5,7 +5,6 @@ const initialState = {
 
 export const reducer = (oldStore = initialState, action) => {
 
-    console.log('Reducer called with action', action);
     if (action.type === 'GAMES_LIST_LOADED') {
         return {
             games: action.games,
