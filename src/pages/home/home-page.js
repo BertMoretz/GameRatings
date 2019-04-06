@@ -8,11 +8,15 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import { GameObj } from "./game-obj"
 import style from './styles.css'
 
-export class HomePage extends React.Component {
+import * as actionCreators from "../../redux/actionCreators"
+import { connect } from "react-redux"
+import { store } from '../../redux/store';
 
-    state = { }
+ class HomePage extends React.Component {
+
 
     componentDidMount() {
+
         //axios.defaults.headers.common['Authorization'] = '861c079a35348acf2360c08a2efc2e90';
         axios
             .get(BACKEND_URL + 'games/?fields=name,cover.*,genres.*,platforms,popularity,summary,aggregated_rating&limit=10&&expand=cover,genres&order=popularity:desc', {headers: {
@@ -20,10 +24,11 @@ export class HomePage extends React.Component {
             }})
             .then(response => {
                 console.log('Axios returned', response.data)
-                this.setState( {
-                  games: response.data
-                })
-          });
+                this.props.gamesListLoaded(response.data)
+            })
+            .catch((err) => {
+               this.props.gamesListLoadFailed()
+            });
 
     }
 
@@ -32,8 +37,12 @@ export class HomePage extends React.Component {
      }
 
     render() {
-        if(!this.state.games) {
+        if(!this.props.games) {
           return <div className={style.loading}> <CircularProgress /> </div>
+        }
+
+        if (this.props.loadFailed) {
+            return <h3>Error loading data from API</h3>
         }
 
         return (
@@ -44,7 +53,7 @@ export class HomePage extends React.Component {
                 <ListSubheader component="div">Popular Now</ListSubheader>
               </GridListTile>
 
-              {this.state.games.map(game =>
+              {this.props.games.map(game =>
                 <GameObj
                   key={game.name}
                   character={game}
@@ -56,3 +65,19 @@ export class HomePage extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (state) => ({
+    games: state.games,
+    loadFailed: state.gamesLoadingFailed
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    gamesListLoaded: (games) => {
+        dispatch(actionCreators.gamesListLoaded(games))
+    },
+    gamesListLoadFailed: () => {
+        dispatch(actionCreators.gamesListLoadFailed())
+    }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
