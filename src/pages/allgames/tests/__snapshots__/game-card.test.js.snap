@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid renders as container 1`] = `
+"<WithStyles(GridListTile) className=\\"elem\\">
+  <a href=\\"#\\" className=\\"coverlink\\" onClick={[Function: handleDetailsClick]}>
+    <div className=\\"detailscover\\">
+      Details
+    </div>
+    <img src=\\"\\" alt={[undefined]} className=\\"elem\\" />
+    <WithStyles(GridListTileBar) className=\\"caption\\" title={[undefined]} subtitle={{...}} actionIcon={{...}} />
+  </a>
+</WithStyles(GridListTile)>"
+`;
