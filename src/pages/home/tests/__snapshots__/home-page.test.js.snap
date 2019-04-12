@@ -33,3 +33,119 @@ exports[`HomePage test render empty component 1`] = `
    
 </div>
 `;
+
+exports[`HomePage test render non empty component 1`] = `
+<div
+  className="cards"
+>
+  <ul
+    cellSpacing={true}
+    className="MuiGridList-root-11 gridList"
+    style={
+      Object {
+        "margin": -2,
+      }
+    }
+  >
+    <li
+      className="MuiGridListTile-root-12"
+      style={
+        Object {
+          "height": "auto",
+          "padding": 2,
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="MuiGridListTile-tile-13"
+      >
+        <div
+          className="MuiListSubheader-root-16 MuiListSubheader-sticky-21 MuiListSubheader-gutters-19"
+        >
+          Popular Now
+        </div>
+      </div>
+    </li>
+    <li
+      className="MuiGridListTile-root-12 elem"
+    >
+      <div
+        className="MuiGridListTile-tile-13"
+      >
+        <a
+          className="coverlink"
+          href="#"
+          onClick={[Function]}
+        >
+          <div
+            className="detailscover"
+          >
+            Details
+          </div>
+          <img
+            alt="Anthem"
+            className="elem"
+            src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1it2.jpg"
+          />
+          <div
+            className="MuiGridListTileBar-root-22 MuiGridListTileBar-titlePositionBottom-23 MuiGridListTileBar-rootSubtitle-25 caption"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap-26 MuiGridListTileBar-titleWrapActionPosRight-28"
+            >
+              <div
+                className="MuiGridListTileBar-title-29"
+              >
+                Anthem
+              </div>
+              <div
+                className="MuiGridListTileBar-subtitle-30"
+              >
+                <span>
+                   
+                  Shooter
+                </span>
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon-31"
+            >
+              <button
+                className="MuiButtonBase-root-39 MuiIconButton-root-33"
+                disabled={false}
+                onBlur={[Function]}
+                onContextMenu={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <span
+                  className="MuiIconButton-label-38"
+                >
+                  <div
+                    className="score"
+                  >
+                    61%
+                  </div>
+                </span>
+                <span
+                  className="MuiTouchRipple-root-42"
+                />
+              </button>
+            </div>
+          </div>
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
