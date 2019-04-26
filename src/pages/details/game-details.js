@@ -40,6 +40,9 @@ export class GameDetails extends React.Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+          this.loadCharacterDetails(nextProps.match.params.id);
+    }
 
     render() {
 
