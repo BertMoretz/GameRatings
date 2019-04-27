@@ -1,6 +1,5 @@
 import React, { Fragment } from "react"
 import axios from 'axios'
-import "@babel/polyfill";
 import List from '@material-ui/core/List';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -10,24 +9,22 @@ import Button from '@material-ui/core/Button';
 import { withRouter } from "react-router-dom"
 import { SearchElement } from "./search-element"
 
+import { store } from '../../redux/store'
+import * as actionCreators from "../../redux/actionCreators"
+import { connect } from "react-redux"
+
 import style from './styles.css'
 import logo from '../../imgs/logo.png'
 
 class MyAppBar extends React.Component {
 
   state = {
-    games: void 0,
+    searchQuery: ""
   }
 
-  search = async query => {
-    if (query == '') {
-      this.setState({
-        games: void 0
-      }, () => {
-        console.log(this.state.games);
-      })
-    } else {
-       await axios({
+  search = (query) => {
+
+        axios({
         url: "https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games",
         method: 'POST',
         headers: {
@@ -38,12 +35,11 @@ class MyAppBar extends React.Component {
       })
       .then(response => {
         console.log('Axios returned', response.data);
-        this.setState({
-          games: response.data
-        })
-        console.log(this.state.games);
+        this.props.gamesListLoaded(response.data)
+      }).catch((err) => {
+         this.props.gamesListLoadFailed()
       });
-    }
+
   }
 
 
@@ -51,9 +47,9 @@ class MyAppBar extends React.Component {
      this.props.history.replace(`/${link}`)
   }
 
-  handleChange = async e => {
+  handleChange = event => {
     this.setState({
-	     searchQuery: e.target.value,
+	     searchQuery: event.target.value,
     }, () => {
       this.search(this.state.searchQuery);
     })
@@ -61,11 +57,8 @@ class MyAppBar extends React.Component {
   }
 
   clickHandler = (game) => () => {
-     this.setState({
-       games: void 0
-     }, () => {
-       this.props.history.replace(`/game/${game.id}`)
-     })
+    this.props.gamesListLoaded([])
+    this.props.history.replace(`/game/${game.id}`)
    }
 
   render() {
@@ -82,19 +75,19 @@ class MyAppBar extends React.Component {
                 root: style.inputRoot,
                 input: style.inputInput,
               }}
-              onChange={e => this.handleChange(e)}
+              onChange={this.handleChange}
               value={this.state.searchQuery}
             />
           {
-            this.state.games != void 0 ?
+            this.props.games.length != 0 ?
               <List component="div" className={style.resultWindow}>
-                {this.state.games ? this.state.games.map(game =>
+                {this.props.games.map(game =>
                   <SearchElement
                     key={game.name}
                     game={game}
                     handleDetailsClick={this.clickHandler(game)}
                     />
-                ) : ""}
+                )}
               </List>: " "
           }
 
@@ -107,4 +100,18 @@ class MyAppBar extends React.Component {
   }
 };
 
-export default withRouter(MyAppBar)
+const mapStateToProps = (state) => ({
+    games: state.games,
+    loadFailed: state.gamesLoadingFailed
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    gamesListLoaded: (games) => {
+        dispatch(actionCreators.gamesListLoaded(games))
+    },
+    gamesListLoadFailed: () => {
+        dispatch(actionCreators.gamesListLoadFailed())
+    }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(MyAppBar))

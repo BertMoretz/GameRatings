@@ -14,6 +14,9 @@ import { store } from '../../redux/store';
 
  class HomePage extends React.Component {
 
+   state = {
+     
+   }
 
     componentDidMount() {
       this.loadGames();
@@ -26,10 +29,12 @@ import { store } from '../../redux/store';
           }})
           .then(response => {
               console.log('Axios returned', response)
-              this.props.gamesListLoaded(response.data)
+              this.setState({
+                games: response.data
+              })
           })
           .catch((err) => {
-             this.props.gamesListLoadFailed()
+
           });
     }
 
@@ -38,11 +43,11 @@ import { store } from '../../redux/store';
      }
 
     render() {
-        if(!this.props.games) {
+        if(!this.state.games) {
           return <div className={style.loading}> <CircularProgress /> </div>
         }
 
-        if (this.props.loadFailed) {
+        if (this.state.loadFailed) {
             return <h3>Error loading data from API</h3>
         }
 
@@ -54,7 +59,7 @@ import { store } from '../../redux/store';
                 <ListSubheader component="div">Popular Now</ListSubheader>
               </GridListTile>
 
-              {this.props.games.map(game =>
+              {this.state.games.map(game =>
                 <GameObj
                   key={game.name}
                   character={game}
@@ -67,18 +72,6 @@ import { store } from '../../redux/store';
     }
 }
 
-const mapStateToProps = (state) => ({
-    games: state.games,
-    loadFailed: state.gamesLoadingFailed
-});
 
-const mapDispatchToProps = (dispatch) => ({
-    gamesListLoaded: (games) => {
-        dispatch(actionCreators.gamesListLoaded(games))
-    },
-    gamesListLoadFailed: () => {
-        dispatch(actionCreators.gamesListLoadFailed())
-    }
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
+export default (HomePage)
