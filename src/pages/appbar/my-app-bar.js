@@ -10,54 +10,32 @@ import { withRouter } from "react-router-dom"
 import { SearchElement } from "./search-element"
 
 import { store } from '../../redux/store'
-import * as actionCreators from "../../redux/actionCreators"
 import { connect } from "react-redux"
+import * as actions from "../../redux/actionCreators/searchParamsChange"
+import * as actionCreators from "../../redux/actionCreators"
+
+import { reduxForm, Field } from 'redux-form'
 
 import style from './styles.css'
 import logo from '../../imgs/logo.png'
 
+const CustomInput = (props) => {
+    return <InputBase
+      placeholder="Search…"
+      {...props}
+      value={props.input.value}
+      onChange={props.input.onChange}
+    />
+}
+
 class MyAppBar extends React.Component {
-
-  state = {
-    searchQuery: ""
-  }
-
-  search = (query) => {
-
-        axios({
-        url: "https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games",
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'user-key': "861c079a35348acf2360c08a2efc2e90"
-        },
-        data: `search "${query}"; fields name,cover.*,aggregated_rating;`
-      })
-      .then(response => {
-        console.log('Axios returned', response.data);
-        this.props.gamesListLoaded(response.data)
-      }).catch((err) => {
-         this.props.gamesListLoadFailed()
-      });
-
-  }
-
 
   buildDetailsClickHandler = (link) => () => {
      this.props.history.replace(`/${link}`)
   }
 
-  handleChange = event => {
-    this.setState({
-	     searchQuery: event.target.value,
-    }, () => {
-      this.search(this.state.searchQuery);
-    })
-
-  }
-
   clickHandler = (game) => () => {
-    this.props.gamesListLoaded([])
+    this.props.gamesListLoaded([]);
     this.props.history.replace(`/game/${game.id}`)
    }
 
@@ -69,17 +47,12 @@ class MyAppBar extends React.Component {
             <img src={logo} className={style.logo}/>
           </div>
           <div className={style.search}>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: style.inputRoot,
-                input: style.inputInput,
-              }}
-              onChange={this.handleChange}
-              value={this.state.searchQuery}
-            />
+          <Field
+            name="query"
+            component={CustomInput}
+          />
           {
-            this.props.games.length != 0 ?
+            this.props.games && this.props.games.length != 0 ?
               <List component="div" className={style.resultWindow}>
                 {this.props.games.map(game =>
                   <SearchElement
@@ -101,17 +74,17 @@ class MyAppBar extends React.Component {
 };
 
 const mapStateToProps = (state) => ({
-    games: state.games,
-    loadFailed: state.gamesLoadingFailed
+    games: state.app.games,
+    loadFailed: state.app.gamesLoadingFailed
 });
 
 const mapDispatchToProps = (dispatch) => ({
     gamesListLoaded: (games) => {
         dispatch(actionCreators.gamesListLoaded(games))
-    },
-    gamesListLoadFailed: () => {
-        dispatch(actionCreators.gamesListLoadFailed())
     }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(MyAppBar))
+export default reduxForm({
+    form: 'search',
+    onChange: (values, dispatch) => dispatch(actions.searchParamsChange(values))
+}) (connect(mapStateToProps, mapDispatchToProps)(withRouter(MyAppBar)))

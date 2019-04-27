@@ -1,21 +1,17 @@
 import axios from "axios"
 import * as actionCreators from "./index"
+import { getFormValues } from "redux-form"
 
 
 export const loadGamesActionCreator = (values = {}) => (dispatch) => {
-    const { query, aliveOnly } = values
-
+  const { query, aliveOnly } = values
     const queryParams = []
 
     if (query) {
-        queryParams.push(`${query}`)
+        queryParams.push(query)
     }
 
-    if (aliveOnly) {
-        queryParams.push('status=alive')
-    }
-
-    const searchQuery = queryParams.length > 0 ? `?${queryParams.join(' ')}` : ''
+    const searchQuery = queryParams.length > 0 ? `${queryParams.join(' ')}` : ''
 
     axios({
       url: "https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games",
