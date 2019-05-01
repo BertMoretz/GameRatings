@@ -47,7 +47,7 @@ describe('action loadGamesActionCreator', () => {
 
         moxios.wait(function () {
             const req = moxios.requests.mostRecent()
-            expect(dispatch).toBeCalledTimes(1)
+            expect(dispatch).toBeCalledTimes(2)
             expect(dispatch.mock.calls[0][0]).toMatchSnapshot()
             done()
         })

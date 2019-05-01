@@ -2,13 +2,6 @@
 
 exports[`action loadGamesActionCreator works fine 1`] = `
 Object {
-  "games": Object {
-    "results": Array [
-      Object {
-        "test": "game",
-      },
-    ],
-  },
-  "type": "GAMES_LIST_LOADED",
+  "type": "GAMES_LIST_FETCHING",
 }
 `;

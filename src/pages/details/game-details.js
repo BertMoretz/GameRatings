@@ -72,7 +72,11 @@ export class GameDetails extends React.Component {
                             <div className={styles.gamename}> {game.name} </div>
                             <div className={styles.gamegenre}> {game.genres ? game.genres[0].name : "Video Game"} </div>
                             <br/>
-                            <div className={styles.gamecomp}> Developed by {game.involved_companies[1] ? game.involved_companies[1].company.name : game.involved_companies[0].company.name} </div>
+                            {
+                              game.involved_companies ?
+                              <div className={styles.gamecomp}> Developed by {game.involved_companies[1] ? game.involved_companies[1].company.name : game.involved_companies[0].company.name} </div> :
+                                " "
+                            }
                           </Grid>
                           <Grid item className={styles.hm}>
                             <div className={styles.rate}> {game.summary ? game.summary : game.name + " video game"} </div>

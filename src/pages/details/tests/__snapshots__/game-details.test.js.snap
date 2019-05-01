@@ -1,5 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`GameDetails Grid renders as container 1`] = `
+"<WithStyles(Grid) container={true} justify=\\"center\\" alignItems=\\"center\\">
+  <WithStyles(Grid) item={true} xs={12} md={12} lg={12} justify=\\"center\\">
+    <div className=\\"hey\\">
+      <img src={{...}} className=\\"back\\" />
+    </div>
+    <div className=\\"gamecover\\">
+      <WithStyles(Grid) container={true} justify=\\"center\\" alignItems=\\"center\\">
+        <WithStyles(Grid) item={true} xs={12} md={4} lg={3} justify=\\"center\\">
+          <img src={{...}} alt={[undefined]} className=\\"elem\\" />
+        </WithStyles(Grid)>
+        <WithStyles(Grid) item={true} xs={12} sm={true} container={true}>
+          <WithStyles(Grid) item={true} xs={12} sm={true} container={true} direction=\\"column\\" spacing={40}>
+            <WithStyles(Grid) item={true}>
+              <div className=\\"gamename\\">
+                 
+                 
+              </div>
+              <div className=\\"gamegenre\\">
+                 
+                Video Game
+                 
+              </div>
+              <br />
+               
+            </WithStyles(Grid)>
+            <WithStyles(Grid) item={true} className=\\"hm\\">
+              <div className=\\"rate\\">
+                 
+                undefined video game
+                 
+              </div>
+            </WithStyles(Grid)>
+          </WithStyles(Grid)>
+        </WithStyles(Grid)>
+        <WithStyles(Grid) item={true} xs={12} md={4} lg={3}>
+          <div className=\\"gamerating tbd\\">
+             
+            tbd
+             
+          </div>
+        </WithStyles(Grid)>
+      </WithStyles(Grid)>
+    </div>
+    <div className=\\"styles.screens\\">
+      <WithStyles(GridList) className=\\"gridList\\" cols={2.3} cellHeight={300}>
+         
+      </WithStyles(GridList)>
+    </div>
+  </WithStyles(Grid)>
+</WithStyles(Grid)>"
+`;
+
 exports[`GameDetails test render empty component 1`] = `
 <div
   className="loading"
