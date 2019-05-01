@@ -1,6 +1,10 @@
 import React, { Fragment } from "react"
 import axios from 'axios'
 import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -51,8 +55,17 @@ class MyAppBar extends React.Component {
             name="query"
             component={CustomInput}
           />
-          {
-            this.props.games && this.props.games.length != 0 ?
+        { this.props.isFetching ?
+            <List component="div" className={style.resultWindow}>
+              <ListItem>
+                <ListItemIcon>
+                  <CircularProgress />
+                </ListItemIcon>
+                <ListItemText primary={"Searching..."} />
+              </ListItem>
+            </List>
+              :
+              this.props.games && this.props.games.length != 0 ?
               <List component="div" className={style.resultWindow}>
                 {this.props.games.map(game =>
                   <SearchElement
@@ -61,12 +74,13 @@ class MyAppBar extends React.Component {
                     handleDetailsClick={this.clickHandler(game)}
                     />
                 )}
-              </List>: " "
-          }
+                </List>:
+              " "
+            }
 
           </div>
           <Button color="inherit" onClick={this.buildDetailsClickHandler("home").bind(this)}>Home</Button>
-          <Button color="inherit" onClick={this.buildDetailsClickHandler("all")}> All Games</Button>
+          <Button color="inherit" onClick={this.buildDetailsClickHandler("all/1")}> All Games</Button>
         </Toolbar>
       </AppBar>
     )
@@ -75,7 +89,8 @@ class MyAppBar extends React.Component {
 
 const mapStateToProps = (state) => ({
     games: state.app.games,
-    loadFailed: state.app.gamesLoadingFailed
+    loadFailed: state.app.gamesLoadingFailed,
+    isFetching: state.app.isFetching
 });
 
 const mapDispatchToProps = (dispatch) => ({

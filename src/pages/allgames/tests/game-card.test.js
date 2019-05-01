@@ -9,7 +9,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 import { shallow, mount, render } from 'enzyme';
 
-test('Grid renders as container', () => {
+test('test', () => {
 
     const shallowComponent = shallow(<GameCard game={{origin: ''}} handleDetailsClick={() =>{}} />)
     const mountComponent = mount(<GameCard game={{origin: ''}} handleDetailsClick={() =>{}} />)

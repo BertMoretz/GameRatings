@@ -16,6 +16,7 @@ import axios from 'axios';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import styles from "./details.css"
+import back from '../../imgs/emptyback.png'
 
 export class GameDetails extends React.Component {
 
@@ -41,7 +42,9 @@ export class GameDetails extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
+      if (nextProps.match.params.id != this.props.match.params.id) {
           this.loadCharacterDetails(nextProps.match.params.id);
+      }
     }
 
     render() {
@@ -56,23 +59,23 @@ export class GameDetails extends React.Component {
             <Grid container justify="center" alignItems="center">
                 <Grid item xs={12} md={12} lg={12} justify="center">
                   <div className={styles.hey}>
-                    <img src={"https://images.igdb.com/igdb/image/upload/t_screenshot_huge/" + game.screenshots[0].image_id  + ".jpg"} className={styles.back}/>
+                    <img src={game.screenshots ? "https://images.igdb.com/igdb/image/upload/t_screenshot_huge/" + game.screenshots[0].image_id  + ".jpg" : back} className={styles.back}/>
                   </div>
                   <div className={styles.gamecover}>
                     <Grid container justify="center" alignItems="center">
                       <Grid item xs={12} md={4} lg={3} justify="center">
-                        <img src={"https://images.igdb.com/igdb/image/upload/t_cover_big/" + game.cover.image_id + ".jpg"} alt={game.name} className={styles.elem} />
+                        <img src={game.cover ? "https://images.igdb.com/igdb/image/upload/t_cover_big/" + game.cover.image_id + ".jpg": back} alt={game.name} className={styles.elem} />
                       </Grid>
                       <Grid item xs={12} sm container>
                         <Grid item xs={12} sm container direction="column" spacing={40}>
                           <Grid item >
                             <div className={styles.gamename}> {game.name} </div>
-                            <div className={styles.gamegenre}> {game.genres[0].name} </div>
+                            <div className={styles.gamegenre}> {game.genres ? game.genres[0].name : "Video Game"} </div>
                             <br/>
                             <div className={styles.gamecomp}> Developed by {game.involved_companies[1] ? game.involved_companies[1].company.name : game.involved_companies[0].company.name} </div>
                           </Grid>
                           <Grid item className={styles.hm}>
-                            <div className={styles.rate}> {game.summary} </div>
+                            <div className={styles.rate}> {game.summary ? game.summary : game.name + " video game"} </div>
                           </Grid>
 
                         </Grid>
@@ -85,11 +88,11 @@ export class GameDetails extends React.Component {
                   </div>
                   <div className="styles.screens">
                     <GridList className={styles.gridList} cols={2.3} cellHeight={300}>
-                      {game.screenshots.map(screen => (
+                      {game.screenshots ? game.screenshots.map(screen => (
                         <GridListTile key={screen.image_id}>
                           <img src={"https://images.igdb.com/igdb/image/upload/t_screenshot_med/" + screen.image_id + ".jpg"} alt={screen.image_id}/>
                         </GridListTile>
-                      ))}
+                      )) : " "}
                     </GridList>
                 </div>
               </Grid>

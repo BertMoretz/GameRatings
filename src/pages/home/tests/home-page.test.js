@@ -4,39 +4,28 @@ import { Provider } from 'react-redux';
 import createStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-Enzyme.configure({ adapter: new Adapter() });
-
-import { shallow, mount, render } from 'enzyme';
+import axios from 'axios';
+import moxios from 'moxios';
 
 import HomePage from '../home-page'
 
 describe('HomePage', () => {
   it('test render empty component', () => {
-    const mockStore = createStore([thunk])
     const initialState = {
-      
+
     }
-    const store = mockStore(initialState)
 
     const container = renderer
       .create(
-        <Provider store={store}>
           <Router>
             <Route component={HomePage}/>
-          </Router>
-        </Provider>,
-        { createNodeMock: ({ type }) => document.createElement(type) }
+          </Router>,
       )
 
     expect(container.toJSON()).toMatchSnapshot()
   }),
 
   it('test render non empty component', () => {
-    const mockStore = createStore([thunk])
     const initialState = {
       games: [{
         "id": 36950,
@@ -86,18 +75,38 @@ describe('HomePage', () => {
         "summary": "Anthem is a shared-world action RPG, where players can delve into a vast landscape teeming with amazing technology and forgotten treasures. This is a world where Freelancers are called upon to defeat savage beasts, ruthless marauders, and forces plotting to conquer humanity."
       }]
     }
-    const store = mockStore(initialState)
 
     const container = renderer
       .create(
-        <Provider store={store}>
           <Router>
             <Route component={HomePage}/>
-          </Router>
-        </Provider>,
-        { createNodeMock: ({ type }) => document.createElement(type) }
+          </Router>,
       )
 
     expect(container.toJSON()).toMatchSnapshot()
+  }),
+
+  it('test api', () => {
+
+      let onFulfilled = jest.fn()
+
+      moxios.stubRequest('https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games', {
+          status: 200,
+          response: {
+              results: [{ test: 'game' }]
+          }
+      })
+
+      axios.get('https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games').then(onFulfilled)
+
+      moxios.wait(function () {
+        expect(onFulfilled).toBeCalled();
+        expect(onFulfilled.mock.calls[0][0]).toMatchSnapshot();
+        done()
+      })
+  })
+
+  afterEach(() => {
+      moxios.uninstall()
   })
 })

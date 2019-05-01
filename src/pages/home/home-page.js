@@ -15,7 +15,7 @@ import { store } from '../../redux/store';
  class HomePage extends React.Component {
 
    state = {
-     
+
    }
 
     componentDidMount() {
@@ -34,7 +34,9 @@ import { store } from '../../redux/store';
               })
           })
           .catch((err) => {
-
+            this.setState({
+              loadFailed: true,
+            })
           });
     }
 

@@ -13,6 +13,8 @@ export const loadGamesActionCreator = (values = {}) => (dispatch) => {
 
     const searchQuery = queryParams.length > 0 ? `${queryParams.join(' ')}` : ''
 
+    dispatch(actionCreators.gamesListFetching());
+
     axios({
       url: "https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games",
       method: 'POST',

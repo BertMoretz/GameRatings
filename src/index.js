@@ -17,7 +17,7 @@ ReactDOM.render(
         <Switch>
           <Route path="/home" component={HomePage}/>
           <Route path="/game/:id" component={GameDetails}/>
-          <Route path="/all" component={AllGames} />
+          <Route path="/all/:page" component={AllGames} />
           <Redirect from="*" to="/home"/>
         </Switch>
       </main>
