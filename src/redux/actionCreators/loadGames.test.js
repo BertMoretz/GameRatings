@@ -36,7 +36,7 @@ describe('action loadGamesActionCreator', () => {
         moxios.stubRequest('https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games', {
             status: 200,
             responseText: {
-                results: [{ test: 'game' }]
+                results: { test: 'game' }
             }
         })
 
@@ -49,6 +49,7 @@ describe('action loadGamesActionCreator', () => {
             const req = moxios.requests.mostRecent()
             expect(dispatch).toBeCalledTimes(2)
             expect(dispatch.mock.calls[0][0]).toMatchSnapshot()
+            expect(dispatch.mock.calls[1][0]).toMatchSnapshot()
             done()
         })
     })

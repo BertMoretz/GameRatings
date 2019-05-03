@@ -71,7 +71,7 @@
       ".+\\.(css|png|jpg)$": "identity-obj-proxy"
     },
     "globals": {
-      "BACKEND_URL": "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/"
+      "BACKEND_URL": "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/games"
     },
     "collectCoverage": true
   }

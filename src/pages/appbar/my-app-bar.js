@@ -24,13 +24,20 @@ import style from './styles.css'
 import logo from '../../imgs/logo.png'
 
 const CustomInput = (props) => {
-    return <InputBase
-      placeholder="Search…"
-      {...props}
-      value={props.input.value}
-      onChange={props.input.onChange}
-    />
+    return (
+      <div>
+        <InputBase
+          name="search"
+          placeholder={props.label}
+          {...props.input}
+          value={props.input.value}
+          onChange={props.input.onChange}
+          label={props.label}
+        />
+      </div>
+    )
 }
+
 
 class MyAppBar extends React.Component {
 
@@ -48,12 +55,13 @@ class MyAppBar extends React.Component {
       <AppBar position="static" color="default">
         <Toolbar>
           <div className={style.grow}>
-            <img src={logo} className={style.logo}/>
+            <img src={logo} className={style.logo} alt="logo"/>
           </div>
           <div className={style.search}>
           <Field
             name="query"
             component={CustomInput}
+            label="Search"
           />
         { this.props.isFetching ?
             <List component="div" className={style.resultWindow}>

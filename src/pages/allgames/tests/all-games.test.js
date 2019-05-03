@@ -99,21 +99,25 @@ describe('AllGames', () => {
   }),
 
   it('test api', () => {
+      const props = {
+        match: {
+          page: 6
+        }
+      }
 
       let onFulfilled = jest.fn()
 
       moxios.stubRequest('https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games', {
           status: 200,
           response: {
-              results: [{ test: 'game' }]
+              results: { test: 'game' }
           }
       })
 
-      axios.get('https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games').then(onFulfilled)
+      const shallowComponent = shallow(<AllGames {...props}/>)
 
       moxios.wait(function () {
-        expect(onFulfilled).toBeCalled();
-        expect(onFulfilled.mock.calls[0][0]).toMatchSnapshot();
+        expect(shallowComponent).toEqual({ test: 'game' });
         done()
       })
   })

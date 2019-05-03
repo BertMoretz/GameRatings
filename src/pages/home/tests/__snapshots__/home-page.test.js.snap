@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`HomePage test api error 1`] = `ShallowWrapper {}`;
+
+exports[`HomePage test api success 1`] = `ShallowWrapper {}`;
+
 exports[`HomePage test render empty component 1`] = `
 <div
   className="loading"

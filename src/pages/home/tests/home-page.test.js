@@ -7,9 +7,24 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 import moxios from 'moxios';
 
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({ adapter: new Adapter() });
+
+import { shallow, mount, render } from 'enzyme';
+
 import HomePage from '../home-page'
 
 describe('HomePage', () => {
+  beforeEach(() => {
+    moxios.install()
+  })
+
+  afterEach(() => {
+      moxios.uninstall()
+  })
+
   it('test render empty component', () => {
     const initialState = {
 
@@ -86,27 +101,69 @@ describe('HomePage', () => {
     expect(container.toJSON()).toMatchSnapshot()
   }),
 
-  it('test api', () => {
+  it('test api success', (done) => {
 
-      let onFulfilled = jest.fn()
+      const wrapper = shallow(<HomePage/>)
+      const componentInstance = wrapper.instance();
+      componentInstance.loadGames();
 
-      moxios.stubRequest('https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games', {
-          status: 200,
-          response: {
-              results: [{ test: 'game' }]
-          }
-      })
-
-      axios.get('https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games').then(onFulfilled)
 
       moxios.wait(function () {
-        expect(onFulfilled).toBeCalled();
-        expect(onFulfilled.mock.calls[0][0]).toMatchSnapshot();
+        const req = moxios.requests.mostRecent()
+        req.respondWith({
+          status: 200,
+          response: {
+            data: {
+              test: "game"
+            }
+          }
+        })
+        .then((response)=> {
+          componentInstance.setState({
+            games: response.data
+          })
+        }).catch(() => {
+          componentInstance.setState({
+            loadFailed: true
+          })
+        })
+
+        expect(wrapper).toMatchSnapshot();
+        done()
+      })
+  }),
+
+  it('test api error', (done) => {
+
+      const wrapper = shallow(<HomePage/>)
+      const componentInstance = wrapper.instance();
+      componentInstance.loadGames();
+
+
+      moxios.wait(function () {
+        const req = moxios.requests.mostRecent()
+        req.respondWith({
+          status: 404,
+          response: {
+            data: {
+              error: " "
+            }
+          }
+        })
+        .then((response)=> {
+          componentInstance.setState({
+            games: response.data
+          })
+        }).catch(() => {
+          componentInstance.setState({
+            loadFailed: true
+          })
+        })
+
+        expect(wrapper).toMatchSnapshot();
         done()
       })
   })
 
-  afterEach(() => {
-      moxios.uninstall()
-  })
+
 })
