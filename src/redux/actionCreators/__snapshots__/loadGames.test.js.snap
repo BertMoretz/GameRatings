@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`action loadGamesActionCreator works fine 1`] = `
+Object {
+  "type": "GAMES_LIST_FETCHING",
+}
+`;
+
+exports[`action loadGamesActionCreator works fine 2`] = `
+Object {
+  "games": Object {
+    "results": Object {
+      "test": "game",
+    },
+  },
+  "type": "GAMES_LIST_LOADED",
+}
+`;

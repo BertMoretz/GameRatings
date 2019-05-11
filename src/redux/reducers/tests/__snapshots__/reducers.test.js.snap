@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducer for GAMES_LIST_LOADED action 1`] = `
+Object {
+  "games": Array [
+    Object {
+      "aggregated_rating": 61,
+      "cover": Object {
+        "alpha_channel": false,
+        "animated": false,
+        "game": 36950,
+        "height": 960,
+        "id": 71030,
+        "image_id": "co1it2",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1it2.jpg",
+        "width": 677,
+      },
+      "genres": Array [
+        Object {
+          "created_at": 1297555200,
+          "id": 5,
+          "name": "Shooter",
+          "slug": "shooter",
+          "updated_at": 1323216000,
+          "url": "https://www.igdb.com/genres/shooter",
+        },
+        Object {
+          "created_at": 1297555200,
+          "id": 12,
+          "name": "Role-playing (RPG)",
+          "slug": "role-playing-rpg",
+          "updated_at": 1323216000,
+          "url": "https://www.igdb.com/genres/role-playing-rpg",
+        },
+        Object {
+          "created_at": 1323561600,
+          "id": 31,
+          "name": "Adventure",
+          "slug": "adventure",
+          "updated_at": 1323561600,
+          "url": "https://www.igdb.com/genres/adventure",
+        },
+      ],
+      "id": 36950,
+      "name": "Anthem",
+      "platforms": Array [
+        6,
+        48,
+        49,
+      ],
+      "summary": "Anthem is a shared-world action RPG, where players can delve into a vast landscape teeming with amazing technology and forgotten treasures. This is a world where Freelancers are called upon to defeat savage beasts, ruthless marauders, and forces plotting to conquer humanity.",
+    },
+  ],
+  "gamesLoadingFailed": false,
+  "isFetching": false,
+}
+`;

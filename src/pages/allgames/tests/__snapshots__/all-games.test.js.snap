@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllGames Grid renders as container 1`] = `
+"<div>
+  <WithStyles(GridList) cellHeight={180} className=\\"gridList\\" cellSpacing={true}>
+    <WithStyles(GridListTile) cols={2} style={{...}}>
+      <WithStyles(ListSubheader) component=\\"div\\">
+        All Games
+      </WithStyles(ListSubheader)>
+    </WithStyles(GridListTile)>
+    <GameCard game={{...}} handleDetailsClick={[Function]} />
+  </WithStyles(GridList)>
+  <div className=\\"paging\\">
+    <PaginationBoxView previousLabel=\\"previous\\" pageRangeDisplayed={10} nextLabel=\\"next\\" onPageChange={[Function]} containerClassName=\\"pagination\\" subContainerClassName=\\"pages pagination\\" activeClassName=\\"active\\" pageLinkClassName=\\"page\\" pageCount={10} marginPagesDisplayed={3} previousClassName=\\"previous\\" nextClassName=\\"next\\" breakLabel=\\"...\\" disabledClassName=\\"disabled\\" disableInitialCallback={false} />
+  </div>
+</div>"
+`;
+
+exports[`AllGames test render empty component 1`] = `
+<div
+  className="loading"
+>
+   
+  <div
+    className="MuiCircularProgress-root-1 MuiCircularProgress-colorPrimary-4 MuiCircularProgress-indeterminate-3"
+    role="progressbar"
+    style={
+      Object {
+        "height": 40,
+        "width": 40,
+      }
+    }
+  >
+    <svg
+      className="MuiCircularProgress-svg-6"
+      viewBox="22 22 44 44"
+    >
+      <circle
+        className="MuiCircularProgress-circle-7 MuiCircularProgress-circleIndeterminate-9"
+        cx={44}
+        cy={44}
+        fill="none"
+        r={20.2}
+        strokeWidth={3.6}
+        style={Object {}}
+      />
+    </svg>
+  </div>
+   
+</div>
+`;

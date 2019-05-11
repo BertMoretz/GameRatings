@@ -20,14 +20,11 @@ export class AllGames extends React.Component {
 
     state = {
       games: void 0,
-      offset: 0
     }
 
-
-
-    loadGames = () => {
+    loadGames = (offset) => {
       axios
-          .get(`https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games/?fields=name,cover.*,genres.*,platforms,popularity,summary,aggregated_rating&limit=15&offset=${this.state.offset}&&expand=cover,genres&order=popularity:desc`, {headers: {
+          .get(`https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games/?fields=name,cover.*,genres.*,platforms,popularity,summary,aggregated_rating&limit=15&offset=${offset}&&expand=cover,genres&order=popularity:desc`, {headers: {
             "user-key": "861c079a35348acf2360c08a2efc2e90"
           }})
           .then(response => {
@@ -39,10 +36,20 @@ export class AllGames extends React.Component {
     }
 
     componentDidMount() {
-      this.loadGames();
+      if (this.props.match.params) {
+          this.loadGames((this.props.match.params.page-1) * 15);
+      }
     }
 
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.match.params.page != this.props.match.params.page) {
+          this.loadGames((nextProps.match.params.page-1) * 15);
+      }
+    }
 
+    toPage = (selected) => {
+      this.props.history.push(`/all/${selected+1}`)
+    }
 
     buildDetailsClickHandler = (game) => () => {
        this.props.history.push(`/game/${game.id}`)
@@ -50,13 +57,7 @@ export class AllGames extends React.Component {
 
      handlePageClick = data => {
        let selected = data.selected
-
-       let off = selected * 15;
-
-       this.setState({ offset: off }, () => {
-         this.loadGames();
-       })
-       console.log(this.state.offset + " " + off);
+       this.toPage(selected);
      }
 
 
