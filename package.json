@@ -26,7 +26,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@material-ui/core": "^3.9.2",
-    "axios": "^0.18.0",
+    "axios": ">=0.18.1",
     "identity-obj-proxy": "^3.0.0",
     "moxios": "^0.4.0",
     "react": "^16.8.1",
