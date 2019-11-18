@@ -25,7 +25,7 @@ export class AllGames extends React.Component {
     loadGames = (offset) => {
       axios
           .get(`https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games/?fields=name,cover.*,genres.*,platforms,popularity,summary,aggregated_rating&limit=15&offset=${offset}&&expand=cover,genres&order=popularity:desc`, {headers: {
-            "user-key": "861c079a35348acf2360c08a2efc2e90"
+            "user-key": "bf64f9cdc5dcd51330d432e658773047"
           }})
           .then(response => {
             console.log('Axios returned', response.data)
