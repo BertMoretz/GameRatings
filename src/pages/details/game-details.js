@@ -87,6 +87,7 @@ export class GameDetails extends React.Component {
 
                       <Grid item xs={12} md={4} lg={3}>
                         <div className={"aggregated_rating" in game ? game.aggregated_rating < 70 ? game.aggregated_rating < 50 ? `${styles.gamerating} ${styles.bad}`: `${styles.gamerating} ${styles.okay}`: `${styles.gamerating} ${styles.good}`: `${styles.gamerating} ${styles.tbd}`}> { ('aggregated_rating' in game)? parseInt(game.aggregated_rating ) : "tbd" } </div>
+
                       </Grid>
                     </Grid>
                   </div>
