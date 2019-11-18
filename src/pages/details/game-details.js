@@ -25,7 +25,7 @@ export class GameDetails extends React.Component {
     loadCharacterDetails = (gameID) => {
         axios
             .get(`https://cors-anywhere.herokuapp.com/http://api-v3.igdb.com/games/${gameID}?fields=name,cover.*,artworks.*,created_at,game_engines.*,platforms.*,screenshots.*,genres.*,summary,aggregated_rating,involved_companies.company.*&&expand=cover,artworks,genres,screenshots,platforms,game_engines,involved_companies, involved_companies.company`, {headers: {
-              "user-key": "861c079a35348acf2360c08a2efc2e90"
+              "user-key": "bf64f9cdc5dcd51330d432e658773047"
             }})
             .then(response => {
               console.log('Axios returned', response.data)
