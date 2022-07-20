@@ -39,7 +39,7 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-form": "^8.2.0",
     "redux-thunk": "^2.3.0",
-    "terser": "^3.14.1",
+    "terser": "^4.8.1",
     "webpack": "^4.29.0"
   },
   "devDependencies": {
